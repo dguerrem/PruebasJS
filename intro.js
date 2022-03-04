@@ -106,3 +106,24 @@ do {
     document.write(colores[i] + "<br>");
     i++;
 } while (i < colores.length)*/
+
+// ****************** FUNCIONES ****************** //
+// Función simple sin argumentos
+/*
+function saludo() {
+    document.write("Bienvenido a la web, " + nombre);
+}*/
+
+// Función simple con argumentos
+/*
+function saludo(nombre, edad) {
+    document.write("Bienvenido a la web, " + nombre + " tienes " + edad + " años");
+}
+saludo("Dguerrem", 16);*/
+
+// Función retornadora
+/*
+function sumaNumeros (num1, num2) {
+    return num1 + num2;
+}
+document.write(sumaNumeros(40,20));*/
