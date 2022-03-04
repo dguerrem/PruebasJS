@@ -1,4 +1,4 @@
-var nombre = "David";                      // String
+var nombre = "David";                       // String
 var edad = 18;                              // int
 var edadSumada = edad + 1;                  // int sumada
 var colores = ["Azul","Amarillo","Verde"]   // Array
