@@ -1,4 +1,4 @@
-var nombre = "David";                       // String
+var nombre = "Davide";                       // String
 var edad = 18;                              // int
 var edadSumada = edad + 1;                  // int sumada
 var colores = ["Azul","Amarillo","Verde"]   // Array
@@ -68,8 +68,7 @@ var vacio = null;                           // Valor null
 // document.write(coloresOrdenadosReverse);
 
 // ****************** CONDICIONES ****************** //
-// Sentencia IF básica
-/*
+/* Sentencia IF básica
 if (nombre=="Carlos") {
     document.write("Hola Carlos");
 } else if (nombre=="David") {
@@ -78,29 +77,25 @@ if (nombre=="Carlos") {
     document.write("No te conozco");
 }*/
 
-// Sentencia IF múltiples condiciones
-/*
+/* Sentencia IF múltiples condiciones
 if (edad >= 18 && nombre=="David") {
     document.write("Eres David mayor de edad");
 }*/
 
 // ****************** BUCLES ****************** //
-// Sentencia básica de FOR
-/*
+/* Sentencia básica de FOR
 for (i = 0; i < colores.length; i++) {
     document.write(colores[i] + "<br>");
 }*/
 
-// Sentencia básica de WHILE
-/*
+/* Sentencia básica de WHILE
 var i = 0;
 while (i < colores.length) {
     document.write(colores[i] + "<br>");
     i++;
 }*/
 
-// Sentencia básica de DO WHILE
-/*
+/* Sentencia básica de DO WHILE
 var i = 0;
 do {
     document.write(colores[i] + "<br>");
@@ -108,22 +103,48 @@ do {
 } while (i < colores.length)*/
 
 // ****************** FUNCIONES ****************** //
-// Función simple sin argumentos
-/*
+/* Función simple sin argumentos
 function saludo() {
     document.write("Bienvenido a la web, " + nombre);
 }*/
 
-// Función simple con argumentos
-/*
+/* Función simple con argumentos
 function saludo(nombre, edad) {
     document.write("Bienvenido a la web, " + nombre + " tienes " + edad + " años");
 }
 saludo("Dguerrem", 16);*/
 
-// Función retornadora
-/*
+/* Función retornadora
 function sumaNumeros (num1, num2) {
     return num1 + num2;
 }
 document.write(sumaNumeros(40,20));*/
+
+// ****************** STRINGS ****************** //
+/* Para obtener el número de caracteres
+var caracteresPalabra = nombre.length;
+document.write(caracteresPalabra);*/
+
+/*Para cortar desde el caracter X
+var caracteresPalabra = nombre.substring(2);
+document.write(caracteresPalabra);*/
+
+/* Para cortar desde el caracter X hasta el caracter Y
+var caracteresPalabra = nombre.substring(2,6);
+document.write(caracteresPalabra);*/
+
+/* Obtiene la posicion de la cadena recibida por args
+var caracteresPalabra = nombre.indexOf("D");
+document.write(caracteresPalabra);*/
+
+/* Reemplaca el texto A por el texto B
+var caracteresPalabra = nombre.replace(nombre, "Pedro");
+document.write(caracteresPalabra);*/
+
+/* Convierte el texto A a mayúsculas
+var caracteresPalabra = nombre.toUpperCase();
+document.write(caracteresPalabra);*/
+
+/* Convierte el texto A a minúsculas
+var caracteresPalabra = nombre.toLowerCase();
+document.write(caracteresPalabra);*/

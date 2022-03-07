@@ -9,12 +9,13 @@
 </head>
 
 <body>
-    <div style="border: 1px dashed black; padding: 10px;background-color: rgba(182, 248, 248, 0.52);margin-bottom: 40px;">
+    <div id="Ejercicio1"
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(182, 248, 248, 0.52);margin-bottom: 40px;">
         <h1>Ejercicio 1 - Suma</h1>
         <form action="">
             <input type="text" id="numero1">
             <input type="text" id="numero2">
-            <input type="button" value="suma" onclick="alert(suma())">
+            <input type="button" value="Suma" onclick="alert(suma())">
         </form>
         <script>
             function suma() {
@@ -25,10 +26,29 @@
         </script>
     </div>
 
-    <div  style="border: 1px dashed black; padding: 10px;background-color: rgba(182, 248, 248, 0.52);">
-        <h1>Ejercicio 2 - WIP</h1>
-        
+    <div id="Ejercicio2" style="border: 1px dashed black; padding: 10px;background-color: rgba(153, 255, 255, 0.52);">
+        <h1>Ejercicio 2 - Creación Dinámica de Objetos</h1>
+        <p>1) Lorem ipsum <b>dolor</b> sit amet consectetur adipisicing elit. Magnam, voluptatum exercitationem. Eaque
+            fugit ut, nostrum modi cum adipisci possimus temporibus in quasi? Autem harum recusandae, nam error in
+            aliquid repellat?</p>
+        <p id="segundo">2) Lorem ipsum <b>dolor</b> sit amet consectetur adipisicing elit. Magnam, voluptatum
+            exercitationem. Eaque fugit ut, nostrum modi cum adipisci possimus temporibus in quasi? Autem harum
+            recusandae, nam error in aliquid repellat?</p>
+        <p>3) Lorem ipsum <b>dolor</b> sit amet consectetur adipisicing elit. Magnam, voluptatum exercitationem. Eaque
+            fugit ut, nostrum modi cum adipisci possimus temporibus in quasi? Autem harum recusandae, nam error in
+            aliquid repellat?</p>
+        <input type="button" value="Crea Objeto Nuevo" onclick="creaObjetos()">
     </div>
+
+    <script>
+        function creaObjetos() {
+            var elementoNuevo = document.createElement("h2");
+            var contenidoNuevo = document.createTextNode("Subtitulo Dinámico");
+            elementoNuevo.appendChild(contenidoNuevo);
+            elementoNuevo.setAttribute("align", "center");
+            document.getElementById("Ejercicio2").appendChild(elementoNuevo);
+        }
+    </script>
 </body>
 
 </html>
