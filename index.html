@@ -8,7 +8,7 @@
 
 </head>
 
-<body>
+<body style="font-family: Arial, Helvetica, sans-serif; letter-spacing: 0.8px;">
     <div id="Ejercicio1"
         style="border: 1px dashed black; padding: 10px;background-color: rgba(182, 248, 248, 0.52);margin-bottom: 40px;">
         <h1>Ejercicio 1 - Suma</h1>
@@ -26,7 +26,8 @@
         </script>
     </div>
 
-    <div id="Ejercicio2" style="border: 1px dashed black; padding: 10px;background-color: rgba(153, 255, 255, 0.52);">
+    <div id="Ejercicio2"
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(102, 255, 255, 0.52);margin-bottom: 40px;">
         <h1>Ejercicio 2 - Creación Dinámica de Objetos</h1>
         <p>1) Lorem ipsum <b>dolor</b> sit amet consectetur adipisicing elit. Magnam, voluptatum exercitationem. Eaque
             fugit ut, nostrum modi cum adipisci possimus temporibus in quasi? Autem harum recusandae, nam error in
@@ -48,6 +49,67 @@
             elementoNuevo.setAttribute("align", "center");
             document.getElementById("Ejercicio2").appendChild(elementoNuevo);
         }
+    </script>
+
+    <div id="Ejercicio3"
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(0, 253, 253, 0.52);margin-bottom: 40px;">
+        <h1>Ejercicio 3 - Agregar Nodos en DOM</h1>
+        <ol id="miListaNodos">
+            <li>Primer Elemento de la Lista</li>
+            <li>Segundo Elemento de la Lista</li>
+        </ol>
+    </div>
+
+    <script>
+        //Creo un <li> con un texto determinado y configuro elemento
+        var elemento = document.createElement("li");
+        var textoElemento = document.createTextNode("Nuevo Elemento Creado Dinámico");
+        elemento.appendChild(textoElemento);
+
+        // Obtener el nodoPadre de 2 maneras distintas 
+        var nodoPadre = document.getElementsByTagName("li")[0].parentNode;          // Accediendo por la propiedad .parentNode del hijo
+        var nodoPadre = document.getElementById("miListaNodos");                    // Accediendo directamente al ID del padre
+
+        // Obtengo el nodoHijo para usarlo posteriormente en el insertBefore
+        var nodoHijo = document.getElementsByTagName("li")[0];
+
+        // Inserto de manera dinámica el elemento de 2 maneras distintas:
+        nodoPadre.appendChild(elemento);                                            // Inserta después del padre.
+        nodoPadre.insertBefore(elemento, nodoHijo);                                 // Inserta antes del nodo indicado por args.
+    </script>
+
+    <div id="Ejercicio4"
+        style="border: 1px dashed black; padding: 10px;background-color: rgb(0, 253, 253);margin-bottom: 40px;">
+        <h1>Ejercicio 4 - Modificar, Reemplazar y Eliminar Nodos en DOM</h1>
+        <ol id="miListaNodos2">
+            <li id="primerNodo">Primer Elemento de la Lista</li>
+            <li id="segundoNodo">Segundo Elemento de la Lista</li>
+            <li id="tercerNodo">Tercer Elemento de la Lista</li>
+            <li id="cuartoNodo">Cuarto Elemento de la Lista</li>
+        </ol>
+    </div>
+
+    <script>
+        // Obtengo los nodosHijos que usaré posteriormente
+        var primerNodo = document.getElementById("primerNodo");
+        var segundoNodo = document.getElementById("segundoNodo");
+        var tercerNodo = document.getElementById("tercerNodo");
+        var cuartoNodo = document.getElementById("cuartoNodo");
+
+        // Modifico el texto del primerNodo de 2 maneras distintas: 
+        primerNodo.innerHTML = "Contenido <b class='negrita'> modificado </b> usando innerHTML";                // Interpreta código HTML.
+        segundoNodo.textContent = "Contenido <b class='negrita'> modificado </b> usando textContent";           // Interpreta texto plano.
+
+        // Creo un nuevo elemento y le doy un valor
+        var elemento = document.createElement("li"), contenido = document.createTextNode("Elemento dinámico");
+        elemento.appendChild(contenido);
+
+        // Reemplazo el tercerNodo por el elemento previamente creado
+        var padre = document.getElementById("miListaNodos2");
+        padre.replaceChild(elemento, tercerNodo);
+
+        // Borro el cuartoNodo
+        padre.removeChild(cuartoNodo);
     </script>
 </body>
 
