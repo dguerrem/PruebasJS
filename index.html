@@ -25,15 +25,6 @@
             border: 1px solid #000;
         }
 
-        #Ejercicio7 .thumb {
-            width: 200px;
-            transition: 300ms all ease;
-        }
-
-        #Ejercicio7 .grande {
-            width: 400px;
-        }
-
         #Ejercicio7 .titulo {
             border: 1px solid navy;
             background-color: #ccc;
@@ -42,6 +33,15 @@
 
         #Ejercicio7 .tituloGrande {
             font-size: 40px;
+        }
+
+        #Ejercicio8 .thumb {
+            width: 200px;
+            transition: 300ms all ease;
+        }
+
+        #Ejercicio8 .grande {
+            width: 400px;
         }
     </style>
 </head>
@@ -211,7 +211,41 @@
             encabezado.style.color = "red";
             encabezado.style.backgroundColor = "blue";            
         </script>
+    </div>
 
+    <div id="Ejercicio8"
+        style="border: 1px dashed black; padding: 10px;background-color: rgb(176, 248, 255);margin-bottom: 40px;">
+        <h1 id="encabezado" class="">Ejercicio 8 - Cambio de Tamaño dinámico</h1>
+        <form>
+            <input type="button" value="Cambia el Tamaño" onclick="cambiaTamanyo()">
+        </form>
+        <img id="thumb" class="thumb" src="https://www.fillmurray.com/400/400">
+
+        <script>
+            function cambiaTamanyo() {
+                var thumb = document.getElementById("thumb");
+                if (thumb.className == "thumb") thumb.className = "thumb grande";
+                else thumb.className = "thumb";
+            }
+        </script>
+    </div>
+
+    <div id="Ejercicio9"
+        style="border: 1px dashed black; padding: 10px;background-color: rgb(147, 246, 255);margin-bottom: 40px;">
+        <h1 id="encabezado" class="">Ejercicio 9 - WIP</h1>
+        <button id="boton">Boton</button>
+        <input type="text" id="input">
+
+        <script>
+            (function () {
+                var saluda = function() {
+                    alert("Te saludo");
+                };
+
+                var boton = document.getElementById("boton");
+                boton.addEventListener("click", saluda);
+            }())
+        </script>
     </div>
 </body>
 
