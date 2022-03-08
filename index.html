@@ -5,12 +5,50 @@
     <meta charset="UTF-8">
     <title>Introducción</title>
     <!--<script src="intro.js"></script> -->
+    <style>
+        #Ejercicio5 div {
+            background-color: #dddddd;
+            height: 200px;
+            width: 200px;
+            display: inline-block;
+            margin-right: 20px;
+            border: 1px solid #AAAAAA;
+        }
 
+        #Ejercicio5 .azul {
+            background-color: #0074D9;
+            border: 1px solid #000;
+        }
+
+        #Ejercicio5 .rojo {
+            background-color: #ff0000;
+            border: 1px solid #000;
+        }
+
+        #Ejercicio7 .thumb {
+            width: 200px;
+            transition: 300ms all ease;
+        }
+
+        #Ejercicio7 .grande {
+            width: 400px;
+        }
+
+        #Ejercicio7 .titulo {
+            border: 1px solid navy;
+            background-color: #ccc;
+            padding: 10px;
+        }
+
+        #Ejercicio7 .tituloGrande {
+            font-size: 40px;
+        }
+    </style>
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif; letter-spacing: 0.8px;">
     <div id="Ejercicio1"
-        style="border: 1px dashed black; padding: 10px;background-color: rgba(182, 248, 248, 0.52);margin-bottom: 40px;">
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(210, 255, 255, 0.52);margin-bottom: 40px;">
         <h1>Ejercicio 1 - Suma</h1>
         <form action="">
             <input type="text" id="numero1">
@@ -27,7 +65,7 @@
     </div>
 
     <div id="Ejercicio2"
-        style="border: 1px dashed black; padding: 10px;background-color: rgba(102, 255, 255, 0.52);margin-bottom: 40px;">
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(163, 255, 255, 0.52);margin-bottom: 40px;">
         <h1>Ejercicio 2 - Creación Dinámica de Objetos</h1>
         <p>1) Lorem ipsum <b>dolor</b> sit amet consectetur adipisicing elit. Magnam, voluptatum exercitationem. Eaque
             fugit ut, nostrum modi cum adipisci possimus temporibus in quasi? Autem harum recusandae, nam error in
@@ -52,7 +90,7 @@
     </script>
 
     <div id="Ejercicio3"
-        style="border: 1px dashed black; padding: 10px;background-color: rgba(0, 253, 253, 0.52);margin-bottom: 40px;">
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(124, 255, 255, 0.52);margin-bottom: 40px;">
         <h1>Ejercicio 3 - Agregar Nodos en DOM</h1>
         <ol id="miListaNodos">
             <li>Primer Elemento de la Lista</li>
@@ -79,7 +117,7 @@
     </script>
 
     <div id="Ejercicio4"
-        style="border: 1px dashed black; padding: 10px;background-color: rgb(0, 253, 253);margin-bottom: 40px;">
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(90, 255, 255, 0.52);margin-bottom: 40px;">
         <h1>Ejercicio 4 - Modificar, Reemplazar y Eliminar Nodos en DOM</h1>
         <ol id="miListaNodos2">
             <li id="primerNodo">Primer Elemento de la Lista</li>
@@ -111,6 +149,70 @@
         // Borro el cuartoNodo
         padre.removeChild(cuartoNodo);
     </script>
+
+    <div id="Ejercicio5"
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(42, 255, 255, 0.52);margin-bottom: 40px;">
+        <h1>Ejercicio 5 - Acceso Atributos en DOM</h1>
+
+        <div id="primerBox" class=""></div>
+        <div id="primerBox" class=""></div>
+    </div>
+
+    <script>
+        // Creo los elementos y el nodo primerBox
+        var elementoNuevo = document.createElement("div");
+        var elementoPadre = document.getElementById("Ejercicio5");
+        var primerBox = document.getElementById("primerBox");
+
+        // Anyado al div Ejercicio5 el elementoNuevo, le pongo el class 'azul'
+        elementoNuevo.setAttribute("class", "azul");
+        document.getElementById("Ejercicio5").appendChild(elementoNuevo);
+
+        // Anyado al principio de los nodos el elementoNuevo, le pongo el class 'rojo'
+        elementoNuevo = document.createElement("div");
+        elementoNuevo.setAttribute("class", "rojo");
+        elementoPadre.insertBefore(elementoNuevo, primerBox);
+    </script>
+
+    <div id="Ejercicio6"
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(0, 255, 255, 0.52);margin-bottom: 40px;">
+        <h1>Ejercicio 6 - Cambio de Atributo (Enlace)</h1>
+
+        <a id="enlace" href="https://www.google.es" target="_blank"> Enlace a ...</a>
+        <br><br>
+        <input type="button" value="Enlace a GOOGLE" onclick="cambiaEnlaceGoogle()">
+        <input type="button" value="Enlace a MUNDO" onclick="cambiaEnlaceMundo()">
+
+        <script>
+            var enlace = document.getElementById("enlace");
+            function cambiaEnlaceGoogle() {
+                enlace.href = "https://www.google.es";
+                enlace.textContent = "Enlace a GOOGLE";
+            }
+            function cambiaEnlaceMundo() {
+                enlace.href = "https://www.elmundo.es";
+                enlace.textContent = "Enlace a MUNDO";
+            }
+        </script>
+    </div>
+
+    <div id="Ejercicio7"
+        style="border: 1px dashed black; padding: 10px;background-color: rgba(0, 255, 255, 0.52);margin-bottom: 40px;">
+        <h1 id="encabezado" class="">Ejercicio 7 - Modificar Estilo de Elementos</h1>
+
+        <script>
+            var encabeazdo = document.getElementById("encabezado");
+
+            // Distintas maneras de editar clases de un elemento:
+            encabezado.className = "titulo tituloGrande";                                       // Anyado 2 clases separadas por espacios
+            encabezado.className = encabezado.className.replace("tituloGrande", "");            // Borro 1 de las 2 clases con el replace
+
+            // Cambio el estilo del elemento
+            encabezado.style.color = "red";
+            encabezado.style.backgroundColor = "blue";            
+        </script>
+
+    </div>
 </body>
 
 </html>
