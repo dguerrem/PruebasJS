@@ -232,18 +232,75 @@
 
     <div id="Ejercicio9"
         style="border: 1px dashed black; padding: 10px;background-color: rgb(147, 246, 255);margin-bottom: 40px;">
-        <h1 id="encabezado" class="">Ejercicio 9 - WIP</h1>
-        <button id="boton">Boton</button>
-        <input type="text" id="input">
+        <h1 id="encabezado" class="">Ejercicio 9 - Eventos del DOM (Consultar LOG)</h1>
+        <button id="boton">Evento Click</button>
+        <button id="tipoEvento">Evento Conoce Tipo de Evento</button>
+        <input id="textField" type="text" id="input">
+        <a id="enlaceEvento" href="https://www.google.es">Google</a>
+
+        <script>
+            // Creo las variables
+            var boton = document.getElementById("boton");
+            var botonEvento = document.getElementById("tipoEvento");
+            var textField = document.getElementById("textField");
+            var enlaceEvento = document.getElementById("enlaceEvento");
+
+            // Funcion de autovolcado, para proteger las variables y métodos
+            (function () {
+                var saluda = function () {
+                    alert("Revisa en https://www.w3schools.com/jsref/dom_obj_event.asp los eventos de JS");
+                    console.clear();
+                };
+                var obtenFoco = function () {
+                    console.log("Has obtenido el foco");
+                };
+                var pierdeFoco = function () {
+                    console.log("Has perdido el foco");
+                };
+                var cambiaValor = function () {
+                    console.log("Has cambiado el valor");
+                };
+                var conoceEvento = function (e) {
+                    alert("El evento es de tipo: " + e.type);
+                };
+                var preview = function (e) {
+                    e.preventDefault();                 // Previene la acción por defecto del evento, en este caso no abriría el enlace
+                };
+
+                // Anyado eventos, hay de múltiples tipos: 
+                boton.addEventListener("click", saluda);                    // Al ser clickado
+                botonEvento.addEventListener("click", conoceEvento);        // Al ser clickado
+                enlaceEvento.addEventListener("click", preview);            // Al ser clickado 
+                textField.addEventListener("focus", obtenFoco);             // Al obtener el foco
+                textField.addEventListener("blur", pierdeFoco);             // Al perder el foco
+                textField.addEventListener("change", cambiaValor);          // Al cambiar su valor
+
+                // Elimino un evento
+                textField.removeEventListener("change", cambiaValor);
+            }())
+        </script>
+    </div>
+
+    <div id="Ejercicio10"
+        style="border: 1px dashed black; padding: 10px;background-color: rgb(123, 244, 255);margin-bottom: 40px;">
+        <h1 id="encabezado" class="">Ejercicio 10 - Formularios</h1>
+        <form name="formulario">
+            <input id="ej10Nombre" type="text" maxlength="20" placeholder="Nombre: ">
+            <br>
+
+            <input id="ej10Hombre" name="sexo" type="radio" value="Hombre"> Hombre
+            <input id="ej10Mujer" name="sexo" type="radio" value="Mujer"> Mujer
+            <br>
+
+            <input id="ej10Terminos" name="terminos" type="checkbox"> Términos y Condiciones
+            <br>
+
+            <input id="ej10Enviar" type="submit" name="btn" value="Enviar">
+        </form>
 
         <script>
             (function () {
-                var saluda = function() {
-                    alert("Te saludo");
-                };
-
-                var boton = document.getElementById("boton");
-                boton.addEventListener("click", saluda);
+                
             }())
         </script>
     </div>
