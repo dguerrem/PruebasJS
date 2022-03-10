@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Introducción</title>
-    <!--<script src="intro.js"></script> -->
+    <!--<script src="logicas/intro.js"></script> -->
     <style>
         #Ejercicio5 div {
             background-color: #dddddd;
@@ -284,25 +284,55 @@
     <div id="Ejercicio10"
         style="border: 1px dashed black; padding: 10px;background-color: rgb(123, 244, 255);margin-bottom: 40px;">
         <h1 id="encabezado" class="">Ejercicio 10 - Formularios</h1>
-        <form name="formulario">
-            <input id="ej10Nombre" type="text" maxlength="20" placeholder="Nombre: ">
-            <br>
-
+        <form name="formulario" id="ej10form">
+            <input id="ej10Nombre" type="text" maxlength="20" placeholder="Nombre: "><br>
             <input id="ej10Hombre" name="sexo" type="radio" value="Hombre"> Hombre
-            <input id="ej10Mujer" name="sexo" type="radio" value="Mujer"> Mujer
-            <br>
-
-            <input id="ej10Terminos" name="terminos" type="checkbox"> Términos y Condiciones
-            <br>
-
-            <input id="ej10Enviar" type="submit" name="btn" value="Enviar">
+            <input id="ej10Mujer" name="sexo" type="radio" value="Mujer"> Mujer<br>
+            <input id="ej10Terminos" name="terminos" type="checkbox"> Términos y Condiciones<br>
+            <input type="submit" id="ej10Enviar" name="btn" value="Enviar">
         </form>
 
         <script>
-            (function () {
-                
-            }())
+                (function () {
+                    var formulario = document.getElementById("ej10form");
+                    var elementosForm = formulario.elements;
+                    var botonForm = document.getElementById("ej10Enviar");
+                    formulario.addEventListener("submit", validar);
+
+                    function validar(e) {
+                        validarNombre(e);           // Comprueba el contenido de un textField
+                        validarSexo(e);             // Comprueba los radioButton checkeados
+                        validarTerminos(e);         // Comprueba el checkBox checkeado
+                    }
+
+                    function validarNombre(e) {
+                        if (formulario.ej10Nombre.value == 0) {
+                            alert("Rellena el nombre");
+                            e.preventDefault();
+                        }
+                    }
+
+                    function validarSexo(e) {
+                        if (formulario.sexo[0].checked == false && formulario.sexo[1].checked == false) {
+                            alert("Rellena el sexo");
+                            e.preventDefault();
+                        }
+                    }
+
+                    function validarTerminos(e) {
+                        if (formulario.ej10Terminos.checked == false) {
+                            alert("Selecciona los términos");
+                            e.preventDefault();
+                        }
+                    }
+                }())
         </script>
+    </div>
+
+    <div id="cambioSeccion"
+        style="border: 1px dashed black; padding: 10px;background-color: rgb(87, 241, 255);margin-bottom: 40px;">
+        <h1 id="encabezado" class="">Aplicación Lista de Tareas</h1>
+        <a href = "listaTareas.html"> Acceder a la App de Lista de Tareas </a>
     </div>
 </body>
 
