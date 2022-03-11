@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="estilos/relojDigital.css">
+    <title>Reloj Digital</title>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif; letter-spacing: 0.8px;">
+    <div class="wrap">
+        <div class="widget">
+            <div class="fecha">
+                <p id="diaSemana" class="diaSemana">Viernes</p>
+                <p id="dia" class="dia">11</p>
+                <p> de </p>
+                <p id="mes" class="mes">Marzo</p>
+                <p> del </p>
+                <p id="year" class="year">2022</p>
+            </div>
+
+            <div class="reloj">
+                <p id="horas" class="horas">14</p>
+                <p> : </p>
+                <p id="minutos" class="minutos">20</p>
+                <p> : </p>
+                <div class="caja-segundos">
+                    <p id="ampm" class="ampm">PM</p>
+                    <p id="segundos" class="segundos">50</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="logicas/logicaReloj.js"></script>
+</body>
+
+</html>

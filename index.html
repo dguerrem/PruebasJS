@@ -329,11 +329,70 @@
         </script>
     </div>
 
-    <div id="cambioSeccion"
+    <div id="ejListaTareas"
         style="border: 1px dashed black; padding: 10px;background-color: rgb(87, 241, 255);margin-bottom: 40px;">
         <h1 id="encabezado" class="">Aplicación Lista de Tareas</h1>
-        <a href = "listaTareas.html"> Acceder a la App de Lista de Tareas </a>
+        <a href="listaTareas.html"> Acceder a la App de Lista de Tareas </a>
     </div>
+
+    <div id="Ejercicio 11 - Timers"
+        style="border: 1px dashed black; padding: 10px;background-color: rgb(30, 236, 255);margin-bottom: 40px;">
+        <h1 id="encabezado" class="">Ejercicio 11 - Timers</h1>
+        <p id="ej11segundos">Estos son los segundos sumando hasta 20: </p>
+
+        <script>
+            var cont = 1;
+            var tfSegundos = document.getElementById("ej11segundos");
+            var contSegundos = setInterval(contadorSegundos, 1000);              // Lanza cada 3s la función deseada
+            //setTimeout(contadorSegundos, 2000);                                  // Lanza una sola vez la función a los 2s
+
+            function contadorSegundos() {
+                if (cont === 20) {
+                    clearInterval(contSegundos);                                 // Detiene el intérvalo
+                }
+                var textoSegundos = document.createTextNode(cont);
+                tfSegundos.textContent += textoSegundos.textContent + ", ";
+                console.log(cont);
+                cont++;
+            }
+        </script>
+    </div>
+
+    <div id="Ejercicio 12 - Fechas"
+        style="border: 1px dashed black; padding: 10px;background-color: rgb(0, 217, 255);margin-bottom: 40px;">
+        <h1 id="encabezado" class="">Ejercicio 12 - Fechas</h1>
+        <p id="ej12Fecha">Hoy es: </p>
+        <p id="ej12Hora">La hora es: </p>
+
+        <script>
+            var fechaActual = new Date();
+            var hh = fechaActual.getHours();                     // Obtengo Hora
+            var mm = fechaActual.getMinutes();                   // Obtengo Minutos
+            var ss = fechaActual.getSeconds();                   // Obtengo Segundos
+            var dd = fechaActual.getDate();                      // Obtengo Día
+            var MM = fechaActual.getMonth() + 1;                 // Obtengo Mes y suma 1 (empieza desde el 0)
+            var yyyy = fechaActual.getFullYear();                // Obtengo Año
+
+            var tfFecha = document.getElementById("ej12Fecha");
+            var tfHora = document.getElementById("ej12Hora");
+
+            escribeFechaActual();
+            escribeHoraActual();
+
+            function escribeFechaActual() {
+                tfFecha.textContent += dd + "/" + MM + "/" + yyyy;
+            }
+            function escribeHoraActual() {
+                tfHora.textContent += hh + ":" + mm + ":" + ss;
+            }
+        </script>
+    </div>
+
+    <div id="ejReloj"
+    style="border: 1px dashed black; padding: 10px;background-color: rgb(0, 183, 255);margin-bottom: 40px;">
+    <h1 id="encabezado" class="">Aplicación Reloj Digital</h1>
+    <a href="relojDigital.html"> Acceder a la App de Reloj Digital </a>
+</div>
 </body>
 
 </html>
